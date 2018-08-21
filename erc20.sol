@@ -75,21 +75,13 @@ library SafeMath {
   }
 }
 
-// This is an ERC-20 token contract based on Open Zepplin's StandardToken
-// and MintableToken plus the ability to burn tokens.
 //
-// We had to copy over the code instead of inheriting because of changes
-// to the modifier lists of some functions:
-//   * transfer(), transferFrom() and approve() are not callable during
-//     the minting period, only after MintingFinished()
-//   * mint() can only be called by the minter who is not the owner
-//     but the HoloTokenSale contract.
+// This is an ERC-20 token contract based on Holo's HOT which was based
+// on Zeppelin BasicToken
 //
-// Token can be burned by a special 'destroyer' role that can only
-// burn its tokens.
-contract HoloToken is Ownable {
-  string public constant name = "HoloToken";
-  string public constant symbol = "HOT";
+contract MillennialCoin is Ownable {
+  string public constant name = "MillennialCoin";
+  string public constant symbol = "MIL";
   uint8 public constant decimals = 18;
 
   event Transfer(address indexed from, address indexed to, uint256 value);
